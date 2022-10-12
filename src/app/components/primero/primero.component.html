@@ -1,0 +1,41 @@
+ 
+ <ng-container *ngIf="flag">
+     <p>primero works!</p>
+ </ng-container>
+ 
+<!-- <p  *ngIf="flag">primero works!</p> -->
+
+<button id="btn">Click</button>
+
+<br><br><hr>
+
+<ng-container *ngFor="let country of countries; let i = index">
+
+    <span id="pais-{{i}}">Orden: <p>{{i}}</p>  </span>
+    <span>id: <h2>{{country.id}}</h2> </span>
+    <span>pais: <p>{{country.name}}</p> </span>
+    
+</ng-container>
+
+<br><br><hr>
+
+<ng-container *ngFor="let item of dishes">
+    <div [ngSwitch]="item.country">
+        <span *ngSwitchCase="PAISES.MEXICO">México -- {{item.dish}}</span>
+        <span *ngSwitchCase="PAISES.JAPON">Japon -- {{item.dish}}</span>
+        <span *ngSwitchCase="PAISES.RUSIA">Rusia -- {{item.dish}}</span>
+        <span *ngSwitchDefault>No definido</span>
+    </div>
+</ng-container> 
+
+
+<br><br><hr>
+
+
+<h1 [dynamicColor]="'green'" [appcolor] = "'blue'" [fontSize]="'30px'" [fontStyle]="'italic'">Lo que sea</h1>
+<h1 [dynamicColor]="'green'" [appcolor] = "'red'" [fontSize]="'70px'" [fontStyle]="'arial'">Lo que sea x2</h1> 
+
+
+    <h1 id="text" #text>Otro texto</h1> 
+
+
